@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="taskMan">
+<head>
+	<meta charset="UTF-8">
+	<title>TaskMan | A simple taskmanager</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	<link href="css/taskman.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<h1>A Simple Task Manager Using AngularJS</h1>		
+		</div>
+	</nav>
+	<div class="container">
+		<div class="tasks" ng-controller="tasksController">	
+			<h2>Add New Task</h2>
+			<input type="text" ng-model="newTask" class="form-control"><br />
+			<button ng-click="addTask(newTask)" class="btn btn-primary">Save</button>				
+			
+			<h2>All Tasks</h2>
+			<input type="text" class="form-control filter" ng-model="filterTask" placeholder="Search Tasks">
+			<ul class="list-group">
+				<li ng-repeat="task in tasks | filter:filterTask" class="list-group-item">
+				<label class="checkbox" ng-class="{strike:task.status==1}">
+					<input type="checkbox" name="task-status" id="" ng-checked="task.status==1" ng-click="updateTask(task.id,task.status)">
+					{{task.task}}
+					<span ng-click="deleteTask(task.id)" class="glyphicon glyphicon-trash pull-right"></span>
+				</label>
+				</li>
+			</ul>				
+		</div>
+	</div>
+	
+
+
+
+
+
+
+
+
+	<!-- loading main angularjs file -->
+	<script type="text/javascript" src="js/angular.min.js"></script>
+
+	<!-- custom js(controller) code -->
+	<script type="text/javascript" src="app/app.js"></script>
+</body>
+</html>

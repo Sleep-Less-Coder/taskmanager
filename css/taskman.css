@@ -1,0 +1,20 @@
+.glyphicon{
+	cursor: pointer;
+}
+
+.glyphicon:hover{
+	color: red;
+}
+
+.filter{
+	margin: 20px 0 20px 0;
+	max-width: 200px;
+}
+
+.strike{
+	text-decoration: line-through;
+}
+
+div.tasks {
+	max-width: 600px;
+}
